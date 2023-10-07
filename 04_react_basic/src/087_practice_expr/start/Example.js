@@ -12,11 +12,11 @@ const Example = () => {
       <p>
         記述を変更し、完成コードと同じ状態になるようにしてください。コンポーネントの外側（上部）に変数や関数を準備しているためうまく使ってください。※fragmentクラスの付与されたdivタグはfragmentを使用した記法に変更してください。
       </p>
-      <h3></h3>
-      <h3></h3>
-      <h3></h3>
-      <h3></h3>
-      <h3></h3>
+      <h3>Hello JSX</h3>
+      <h3>{upperCaseText.toUpperCase()}</h3>
+      <h3>{'Hello ' + title}</h3>
+      <h3>{array}</h3>
+      <h3>{fn('Hello')}</h3>
     </div>
   );
 };
