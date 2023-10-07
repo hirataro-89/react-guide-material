@@ -30,6 +30,3 @@ https://code.visualstudio.com/
   `dsznajder.es7-react-js-snippets`  
 
   Reactのスニペット(ショートカット)を使えるようにする
-
-# react-guide-material
-# react-guide-material
