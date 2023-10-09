@@ -5,10 +5,11 @@ import Bye from "./components/Bye"
 import Hello from "./components/Hello"
 
 const Example = () => {
+  const name = 'TOM';
   return (
     <>
-      <Hello />
-      <Bye />
+      <Hello name={name} />
+      <Bye name={name} />
     </>
   );
 };

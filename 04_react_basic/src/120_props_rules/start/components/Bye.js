@@ -1,7 +1,7 @@
-const Bye = (props) => {
+const Bye = ({name}) => {
   return (
     <div>
-      <h3>Bye {props.name}</h3>
+      <h3>Bye {name}</h3>
     </div>
   );
 };
