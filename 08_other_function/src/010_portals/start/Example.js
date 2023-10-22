@@ -14,22 +14,27 @@ import Modal from "./components/Modal";
 モーダル、ポップアップ、トーストは使用の代表例です。
 */
 
-const Example = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  return (
-    <div>
-      <div className="container start"></div>
+const ModalPotal = ({ children }) => {
+	const target = document.querySelector(".container.start");
+	return createPortal(children, target);
+};
 
-      <button
-        type="button"
-        onClick={() => setModalOpen(true)}
-        disabled={modalOpen}
-      >
-        モーダルを表示する
-      </button>
-      {modalOpen && <Modal handleCloseClick={() => setModalOpen(false)} />}
-    </div>
-  );
+const Example = () => {
+	const [modalOpen, setModalOpen] = useState(false);
+	return (
+		<div>
+			<div className="container start"></div>
+
+			<button type="button" onClick={() => setModalOpen(true)} disabled={modalOpen}>
+				モーダルを表示する
+			</button>
+			{modalOpen && (
+				<ModalPotal>
+					<Modal handleCloseClick={() => setModalOpen(false)} />
+				</ModalPotal>
+			)}
+		</div>
+	);
 };
 
 export default Example;
