@@ -1,12 +1,11 @@
+import { useTodos } from "../context/TodoContext";
 import Item from "./Item";
-const List = ({ todos, deleteTodo, updateTodo }) => {
-	const complete = (id) => {
-		deleteTodo(id);
-	};
+const List = () => {
+	const todos = useTodos();
 	return (
 		<div>
 			{todos.map((todo) => (
-				<Item key={todo.id} complete={complete} todo={todo} updateTodo={updateTodo} />
+				<Item key={todo.id} todo={todo} />
 			))}
 		</div>
 	);
