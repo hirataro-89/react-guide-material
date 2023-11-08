@@ -18,7 +18,7 @@ const Timer = () => {
     // console.log('init');
     let intervalId = null;
     intervalId = window.setInterval(() => {
-      console.log('interval called');
+      // console.log('interval called');
       setTime(prev => prev + 1);
     }, 1000);
     return () => {
