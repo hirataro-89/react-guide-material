@@ -1,28 +1,34 @@
-const initialState = 0;
+import { createSlice } from "@reduxjs/toolkit";
 
-const reducer = (state = initialState, { type, payload }) => {
-  switch (type) {
-    case "counter/+":
+const counter = createSlice({
+  name: 'counter',
+  initialState: 0,
+  reducers: {
+    add(state, { type, payload }) {
+      console.log(type, payload);
       return state + payload;
-    case "counter/-":
+    },
+    minus(state, { type, payload }) {
+      console.log(type, payload);
       return state - payload;
-    default:
-      return state;
+    }
   }
-};
+})
 
-const add = (payload) => {
-    return {
-        type: "counter/+",
-        payload
-    }
-}
+// const initialState = 0;
 
-const minus = (payload) => {
-    return {
-        type: "counter/-",
-        payload
-    }
-}
+// const reducer = (state = initialState, { type, payload }) => {
+//   switch (type) {
+//     case "counter/+":
+//       return state + payload;
+//     case "counter/-":
+//       return state - payload;
+//     default:
+//       return state;
+//   }
+// };
 
-export { reducer, add, minus }
+const { add, minus } = counter.actions;
+
+export { add, minus }
+export default counter.reducer;
