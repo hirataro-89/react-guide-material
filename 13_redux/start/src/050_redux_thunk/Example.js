@@ -5,7 +5,7 @@ import store from "./store"
 // redux-thunkの定義
 // const thunkFunction = (payload) => {
 //   return (dispatch, getState) => {
-//     副作用処理  
+//     副作用処理
 //   }
 // }
 const Example = () => {
