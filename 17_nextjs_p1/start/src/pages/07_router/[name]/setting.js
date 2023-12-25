@@ -2,11 +2,15 @@ import { useRouter } from 'next/router';
 
 export default function Setting({ query }) {
   const router = useRouter();
-  console.log(router);
+  console.log(router.query);
+  const clickHandler = () => {
+    router.push('/', '/dummy-url');
+  }
   return (
     <>
       <h2>{query.name}</h2>
       <h2>routerから取得：{router.query.name}</h2>
+      <button onClick={clickHandler}>アクションによる画面遷移</button>
     </>
   )
 }
