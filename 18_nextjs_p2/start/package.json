@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "build-start": "run-s build start",
     "lint": "next lint",
     "next:export": "next export",
     "export": "run-s build next:export"
