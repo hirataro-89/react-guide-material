@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router';
 
-export default function Page({ id }) {
+export default function Page({ id, date }) {
   const router = useRouter();
   if(router.isFallback) {
     return <h3>Loading...</h3>;
   }
-  return <h3>このページは{ id }です。</h3>;
+  return <h3>このページは{ id }です。{date}</h3>;
 };
 
 export async function getStaticPaths() {
@@ -22,9 +22,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   // console.log(context);
   console.log('getStaticProps excuted');
+  const date = new Date;
   return {
     props: {
-      id: params.id
-    }
+      id: params.id,
+      date: date.toJSON()
+    },
+    revalidate: 5 //ISRを使用する際に必要なプロパティ　最後に更新されてから5秒後に再度更新する
   }
 }
