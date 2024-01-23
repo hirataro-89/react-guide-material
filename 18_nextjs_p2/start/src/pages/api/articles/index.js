@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const JSON_SERVER_URL = 'http://localhost:3002/articles';
+const JSON_SERVER_URL = `${process.env.JSON_SERVER_URL}/articles`;
 
 export default async function handler(req, res) {
   try {
